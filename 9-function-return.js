@@ -1,12 +1,10 @@
 
-// return
-// kein return
-
-
 // schnitt => kurz, lang, mittellang
 const cutHair = (person, schnittneu) => {
   person.schnitt = schnittneu
-  // return person
+
+  // convention: if a function updates something, we return the thing that was updated!
+  return person 
 }
 
 // INPUT
@@ -15,15 +13,7 @@ const objPerson = {
   schnitt: "mittellang"
 }
 console.log( objPerson ) // { name: "Rob", schnitt: "mittellang" }
-cutHair( objPerson, "kurz" )
-console.log( objPerson )
 
-// const personUpdated = cutHair(objPerson, "kurz")
-// console.log(personUpdated)
-
-// OUTPUT 
-// const objPerson = {
-//   name: "Rob",
-//   haare: "kurz" // this should get updated!
-// }
-
+// UPDATE person haircut
+const objPersonUpdated = cutHair( objPerson, "kurz" )
+console.log( objPersonUpdated )
