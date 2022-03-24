@@ -1,6 +1,7 @@
 
 const startParty = (person) => {
   person.party = true
+  person.state = "awake"
   return person
 }
 const goSleeping = (person) => {
@@ -24,3 +25,5 @@ console.log( personOutput )
 personOutput = goSleeping( personOutput )
 console.log( personOutput )
 
+personOutput = startParty( personOutput )
+console.log( personOutput )
