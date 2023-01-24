@@ -7,11 +7,12 @@ let post = {
 let postUpdated = { title: "Senior TS Dev UPDATE" }
 
 // comments were deleted after update, because API had no comments
-console.log(postUpdated)
+console.log({post})
+console.log({postUpdated})
 
 // merge allows update just of the fields coming in
 let postUpdatedMerge = { ...post, ...postUpdated }
-console.log(postUpdatedMerge)
+console.log({postUpdatedMerge})
 
 
 

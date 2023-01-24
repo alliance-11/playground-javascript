@@ -32,10 +32,10 @@ console.log( arrPizzasUpdated )
 
 // MERGING objects (mini training)
 
-// const obj1 = { id: 5, name: "Hallo" }
-// const obj2 = { name: "Hallo neu", age: 37 }
+const obj1 = { id: 5, name: "Hallo" }
+const obj2 = { name: "Hallo neu", age: 37 }
 
 // merge two objects together by copying from BOTH with spread operator
-// const objMerge = { ...obj1, ...obj2 }
-// console.log()
-// console.log( objMerge )
+const objMerge = { ...obj1, ...obj2 }
+console.log()
+console.log( objMerge )

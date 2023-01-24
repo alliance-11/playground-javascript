@@ -17,4 +17,4 @@ const useState = (arr) => {
 }
 
 const [books, setBooks] = useState([{ id: "1", title: "Gael guide to hooks" }])
-console.log( books, setBooks)
+console.log( books)

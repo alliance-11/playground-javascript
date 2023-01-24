@@ -56,7 +56,7 @@ const experience = 70
 if(experience >= 50 && experience < 80) {
   console.log("Mittel erfahren")
 }
-else if(experience >= 80 && < 90) {
+else if(experience >= 80 && experience < 90) {
   console.log("Erfahren")
 }
 else if(experience >= 90) {
