@@ -3,19 +3,22 @@ const user = {
   title: "Senior TS Dev soon",
   yearsCoding: 2,
   isAdmin: false,
-  friends: [
-    "Gael", 
-    "Rob",
-    "Niko",
-    "Gamze",
-  ]
-}
-
-// let's manipulate the object above. By creating a copy of "user" on each update... and store te updated copy in variable userCopy!
+  friends: ["Gael", "Rob", "Niko", "Gamze"],
+};
+console.log({ user });
+// let's manipulate the object above.
+//By creating a copy of "userCopy" on each update...
+//and store te updated copy in variable userCopy!
 // after each operation: console.log userCopy
-let userCopy
+let userCopy = user;
+console.log({ userCopy });
+console.log({ user });
 
-// TODO: Increase years coding in object by 2! Do so by creating a copy of user. and updating the field "yearsCoding" by years
+// TODO: Increase years coding in object by 2! Do so by creating a copy of userCopy, updating the field "yearsCoding" by years
+
+let increase = { ...userCopy, yearsCoding: 4 };
+console.log({ increase });
+console.log({ userCopy });
 // result:
 /**
 {
@@ -31,9 +34,13 @@ let userCopy
   ]
 } 
 */
-
-// TODO: Write a function "addYearsCoding" that receives "years" as a parameter. years is a number 
-// The function should create a copy of user variable, and then update the field "yearsCoding" on the copy, adding "years" to it
+// TODO: Write a function "addYearsCoding" that receives "years" as a parameter. years is a number
+// The function should create a copy of userCopy variable, and then update the field "yearsCoding" on the copy, adding "years" to it
+let grownedExperience = {
+  ...userCopy, yearsCoding: userCopy.yearsCoding + 5
+}
+console.log({ grownedExperience });
+console.log({ userCopy });
 
 // Example: userCopy = addYearsCoding(5)
 // should return back:
@@ -50,15 +57,20 @@ let userCopy
     "Gamze",
   ]
 } 
-
 */
 
-
 // TODO: Write a function "makeTitleUppercase" that receives no parameter.
-// The function should create a copy of user variable, and then update the field "title" on the copy, making it uppercase. 
+// The function should create a copy of userCopy variable, and then update the field "title" on the copy, making it uppercase.
 // The result should get stored in userCopy variable
-
 // Example: userCopy = makeTitleUppercase()
+
+let makeTitleUppercase = {
+  ...userCopy, title: userCopy.title.toUpperCase()
+}
+console.log({ makeTitleUppercase });
+console.log({ userCopy });
+console.log({ user });
+
 // should return back:
 /**
 {
@@ -73,14 +85,18 @@ let userCopy
     "Gamze",
   ]
 } 
-*/ 
-
-
+*/
 
 // TODO: Write a function "addFriend" that receives "friend" as a parameter. friend is a string
-// The function should create a copy of user variable, and then update the array field "friends" on the copy, adding the new friend to it.
+// The function should create a copy of userCopy variable, and then update the array field "friends" on the copy, adding the new friend to it.
 
 // Example: userCopy = addFriend("Pierluigi")
+
+let addPierToFriends = {
+  ...userCopy, friends: userCopy.friends.push('Pier')
+}
+console.log({addPierToFriends})
+
 // should return back:
 /**
 {
@@ -96,14 +112,25 @@ let userCopy
     "Pierluigi"
   ]
 } 
-*/ 
-
+*/
 
 // TODO: Write a function "removeFriend" that receives "friend" as a parameter. friend is a string
-// The function should create a copy of user variable, then then update the array field "friends" on the copy, removing the given friend.
+// The function should create a copy of userCopy variable, then then update the array field "friends" on the copy, removing the given friend.
 // Please use the filter method to filter out the given friend
 
 // Example: userCopy = removeFriend("Niko")
+
+let removeLastFriend = {
+  ...userCopy, friends: userCopy.friends.pop(),
+}
+console.log({removeLastFriend})
+
+let removeNiko= {
+  ...userCopy, friends: userCopy.friends.splice(2,1)
+}
+console.log({removeNiko})
+console.log({userCopy})
+
 // should return back
 /**
 {
@@ -117,12 +144,21 @@ let userCopy
     "Gamze",
   ]
 } 
-*/ 
-
+*/
 
 // TODO: Write a function "toggleAdmin" that receives no parameter
-// The function should create a copy of user variable, then then update the array field "isAdmin" on the copy.
-// In case the user is admin (isAdmin === true) the function should set isAdmin to false
-// In case the user is not admin (isAdmin === false) the function should set isAdmin to true
+// The function should create a copy of userCopy variable, then then update the array field "isAdmin" on the copy.
+// In case the userCopy is admin (isAdmin === true) the function should set isAdmin to false
+// In case the userCopy is not admin (isAdmin === false) the function should set isAdmin to true
 
-// Good luck :D
+let isAdmin = {
+  ...userCopy, isAdmin: userCopy.isAdmin = !userCopy.isAdmin
+}
+console.log({isAdmin})
+
+// Good luck :D 🐈
+
+let { title, ...rest } = userCopy;
+console.log({ userCopy });
+console.log({ rest });
+
