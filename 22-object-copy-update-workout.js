@@ -39,7 +39,8 @@ console.log({ userCopy });
 let grownedExperience = (years) => {
   return { ...userCopy, yearsCoding: userCopy.yearsCoding + years };
 };
-// console.log(grownedExperience(5));
+console.log({ grownedExperience: grownedExperience(1) });
+console.log("2-grownedExperience:", grownedExperience(4));
 let addYearsCoding = grownedExperience(5);
 console.log({ addYearsCoding });
 console.log({ userCopy });
@@ -66,11 +67,10 @@ console.log({ userCopy });
 // The result should get stored in userCopy variable
 // Example: userCopy = makeTitleUppercase()
 
-let makeTitleUppercase = {
-  ...userCopy,
-  title: userCopy.title.toUpperCase(),
+let makeTitleUppercase = () => {
+  return { ...userCopy, title: userCopy.title.toUpperCase() };
 };
-console.log({ makeTitleUppercase });
+console.log({ makeTitleUppercase: makeTitleUppercase() });
 console.log({ userCopy });
 console.log({ user });
 
@@ -96,7 +96,7 @@ console.log({ user });
 // Example: userCopy = addFriend("Pierluigi")
 
 let addNewFriends = (newFriend) => {
-  return { ...userCopy, friends: userCopy.friends.push(newFriend) };
+  return { ...userCopy, friends: [...userCopy.friends, newFriend] };
 };
 let addNewFriend = addNewFriends("Pier");
 console.log({ addNewFriend });
@@ -124,18 +124,26 @@ console.log({ addNewFriend });
 
 // Example: userCopy = removeFriend("Niko")
 
-let removeLastFriend = {
-  ...userCopy,
-  friends: userCopy.friends.pop(),
-};
-console.log({ removeLastFriend });
+// let removeLastFriend = {
+//   ...userCopy,
+//   friends: userCopy.friends.pop(),
+// };
+// console.log({ removeLastFriend });
 
-let removeNiko = {
-  ...userCopy,
-  friends: userCopy.friends.splice(2, 1),
+// let removeNiko = {
+//   ...userCopy,
+//   friends: userCopy.friends.splice(2, 1),
+// };
+// console.log({ removeNiko });
+// console.log({ userCopy });
+
+let removeByName = (friendName) => {
+  return {
+    ...userCopy,
+    friends: userCopy.friends.filter((friend) => friend !== friendName),
+  };
 };
-console.log({ removeNiko });
-console.log({ userCopy });
+console.log({ removeByName: removeByName("Niko") });
 
 // should return back
 /**
@@ -157,11 +165,17 @@ console.log({ userCopy });
 // In case the userCopy is admin (isAdmin === true) the function should set isAdmin to false
 // In case the userCopy is not admin (isAdmin === false) the function should set isAdmin to true
 
-let isAdmin = {
-  ...userCopy,
-  isAdmin: (userCopy.isAdmin = !userCopy.isAdmin),
+let isAdmin = (userCp) => {
+  // console.log(userCp)
+  return { ...userCp, isAdmin: !userCp.isAdmin };
 };
-console.log({ isAdmin });
+let adminUpdate = isAdmin(userCopy);
+
+console.log({ adminUpdate });
+adminUpdate = isAdmin(adminUpdate);
+console.log({ adminUpdate });
+adminUpdate = isAdmin(adminUpdate);
+console.log({ adminUpdate });
 
 // Good luck :D 🐈
 
