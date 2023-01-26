@@ -36,10 +36,12 @@ console.log({ userCopy });
 */
 // TODO: Write a function "addYearsCoding" that receives "years" as a parameter. years is a number
 // The function should create a copy of userCopy variable, and then update the field "yearsCoding" on the copy, adding "years" to it
-let grownedExperience = {
-  ...userCopy, yearsCoding: userCopy.yearsCoding + 5
-}
-console.log({ grownedExperience });
+let grownedExperience = (years) => {
+  return { ...userCopy, yearsCoding: userCopy.yearsCoding + years };
+};
+// console.log(grownedExperience(5));
+let addYearsCoding = grownedExperience(5);
+console.log({ addYearsCoding });
 console.log({ userCopy });
 
 // Example: userCopy = addYearsCoding(5)
@@ -65,8 +67,9 @@ console.log({ userCopy });
 // Example: userCopy = makeTitleUppercase()
 
 let makeTitleUppercase = {
-  ...userCopy, title: userCopy.title.toUpperCase()
-}
+  ...userCopy,
+  title: userCopy.title.toUpperCase(),
+};
 console.log({ makeTitleUppercase });
 console.log({ userCopy });
 console.log({ user });
@@ -92,10 +95,11 @@ console.log({ user });
 
 // Example: userCopy = addFriend("Pierluigi")
 
-let addPierToFriends = {
-  ...userCopy, friends: userCopy.friends.push('Pier')
-}
-console.log({addPierToFriends})
+let addNewFriends = (newFriend) => {
+  return { ...userCopy, friends: userCopy.friends.push(newFriend) };
+};
+let addNewFriend = addNewFriends("Pier");
+console.log({ addNewFriend });
 
 // should return back:
 /**
@@ -121,15 +125,17 @@ console.log({addPierToFriends})
 // Example: userCopy = removeFriend("Niko")
 
 let removeLastFriend = {
-  ...userCopy, friends: userCopy.friends.pop(),
-}
-console.log({removeLastFriend})
+  ...userCopy,
+  friends: userCopy.friends.pop(),
+};
+console.log({ removeLastFriend });
 
-let removeNiko= {
-  ...userCopy, friends: userCopy.friends.splice(2,1)
-}
-console.log({removeNiko})
-console.log({userCopy})
+let removeNiko = {
+  ...userCopy,
+  friends: userCopy.friends.splice(2, 1),
+};
+console.log({ removeNiko });
+console.log({ userCopy });
 
 // should return back
 /**
@@ -152,13 +158,13 @@ console.log({userCopy})
 // In case the userCopy is not admin (isAdmin === false) the function should set isAdmin to true
 
 let isAdmin = {
-  ...userCopy, isAdmin: userCopy.isAdmin = !userCopy.isAdmin
-}
-console.log({isAdmin})
+  ...userCopy,
+  isAdmin: (userCopy.isAdmin = !userCopy.isAdmin),
+};
+console.log({ isAdmin });
 
 // Good luck :D 🐈
 
 let { title, ...rest } = userCopy;
 console.log({ userCopy });
 console.log({ rest });
-
