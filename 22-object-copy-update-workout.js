@@ -37,12 +37,13 @@ console.log({ userCopy });
 // TODO: Write a function "addYearsCoding" that receives "years" as a parameter. years is a number
 // The function should create a copy of userCopy variable, and then update the field "yearsCoding" on the copy, adding "years" to it
 let grownedExperience = (years) => {
-  return { ...userCopy, yearsCoding: userCopy.yearsCoding + years };
+  return { ...userCopy, 
+    yearsCoding: userCopy.yearsCoding + years };
 };
-console.log({ grownedExperience: grownedExperience(1) });
-console.log("2-grownedExperience:", grownedExperience(4));
-let addYearsCoding = grownedExperience(5);
-console.log({ addYearsCoding });
+console.log({ grownedExperience: grownedExperience(7) });
+// console.log("2-grownedExperience:", grownedExperience(4));
+// let addYearsCoding = grownedExperience(5);
+// console.log({ addYearsCoding });
 console.log({ userCopy });
 
 // Example: userCopy = addYearsCoding(5)

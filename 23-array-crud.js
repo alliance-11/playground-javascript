@@ -7,8 +7,8 @@ const cart = [
 // WHOLE ARRAY updates
 // we always copy original "cart" object
 // ADD
-let addToCart = (cart, newThink) => {
-  return [...cart, newThink];
+let addToCart = (cart, newItam) => {
+  return [...cart, newItam];
 };
 let newCart = addToCart(cart, { _id: "f6", name: "Lampe", quantity: 2, price:3 });
 console.log(newCart)
