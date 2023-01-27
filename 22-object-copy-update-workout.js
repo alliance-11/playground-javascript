@@ -1,5 +1,6 @@
 const user = {
   name: "Eliza",
+  lastName: "Arza",
   title: "Senior TS Dev soon",
   yearsCoding: 2,
   isAdmin: false,
@@ -13,8 +14,16 @@ console.log({ user });
 let userCopy = user;
 console.log({ userCopy });
 console.log({ user });
+user.id = "u1";
+user.age = 30;
+user.location = {};
+user.location.country = "Germany";
+user.location.city = "Hamburg";
+console.log({ user });
 
-// TODO: Increase years coding in object by 2! Do so by creating a copy of userCopy, updating the field "yearsCoding" by years
+// TODO: Increase years coding in object by 2!
+//Do so by creating a copy of userCopy,
+//updating the field "yearsCoding" by years
 
 let increase = { ...userCopy, yearsCoding: 4 };
 console.log({ increase });
@@ -37,8 +46,7 @@ console.log({ userCopy });
 // TODO: Write a function "addYearsCoding" that receives "years" as a parameter. years is a number
 // The function should create a copy of userCopy variable, and then update the field "yearsCoding" on the copy, adding "years" to it
 let grownedExperience = (years) => {
-  return { ...userCopy, 
-    yearsCoding: userCopy.yearsCoding + years };
+  return { ...userCopy, yearsCoding: userCopy.yearsCoding + years };
 };
 console.log({ grownedExperience: grownedExperience(7) });
 // console.log("2-grownedExperience:", grownedExperience(4));
@@ -166,9 +174,9 @@ console.log({ removeByName: removeByName("Niko") });
 // In case the userCopy is admin (isAdmin === true) the function should set isAdmin to false
 // In case the userCopy is not admin (isAdmin === false) the function should set isAdmin to true
 
-let isAdmin = (userCp) => {
-  // console.log(userCp)
-  return { ...userCp, isAdmin: !userCp.isAdmin };
+let isAdmin = (adminState) => {
+  // console.log(adminState)
+  return { ...adminState, isAdmin: !adminState.isAdmin };
 };
 let adminUpdate = isAdmin(userCopy);
 
