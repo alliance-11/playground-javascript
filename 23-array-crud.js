@@ -32,14 +32,13 @@ const deleteObjectFromArray = (name) => {
 console.log(deleteObjectFromArray("TV"));
 
 // UPDATE
-
 const updatedObject = (name, newPrice) => {
   const newState = cart.map((obj) =>
     obj.name === name ? { ...obj, price: newPrice } : obj
   );
   return newState;
 };
-console.log(updatedObject("Book", 25));
+console.log(updatedObject("Book", 30));
 
 const booleanState = (name, changeState) => {
   const newState = cart.map(state =>
@@ -61,3 +60,4 @@ console.log({minPrice: minPrice})
 const maxPrice = cart.reduce((total, item)=>{
   return item.price < total.price ? total : item
 })
+console.log({maxPrice: maxPrice})
