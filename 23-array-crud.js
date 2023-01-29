@@ -53,4 +53,11 @@ console.log(booleanState('Toaster', false))
 // - by name
 // ???
 // - by price range (min, max)
+const minPrice =  cart.reduce((total, item)=>{
+return item.price > total.price ? total : item
+})
+console.log({minPrice: minPrice})
 
+const maxPrice = cart.reduce((total, item)=>{
+  return item.price < total.price ? total : item
+})
