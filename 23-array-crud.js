@@ -25,39 +25,46 @@ newCart = addToCart(newCart, {
 });
 console.log(newCart);
 
+// UPDATE
+const updateObject = (id, newQuantity) => {
+  const newCart = cart.map((item) =>
+    item._id === id ? { ...item, quantity: newQuantity } : item
+  );
+  return newCart
+};
+console.log({updateObject: updateObject('f1', 7)})
+
 // DELETE
 const deleteObjectFromArray = (name) => {
   return cart.filter((c) => c.name !== name);
 };
 console.log(deleteObjectFromArray("TV"));
 
-// UPDATE
-const updatedObject = (name, newPrice) => {
+const booleanState = (name, changeState) => {
+  const newState = cart.map((state) =>
+    state.name === name ? { ...state, inStock: changeState } : state
+  );
+  return newState;
+};
+console.log(booleanState("Toaster", false));
+
+// FILTER
+// - by name
+const filterObjectByName = (name, newPrice) => {
   const newState = cart.map((obj) =>
     obj.name === name ? { ...obj, price: newPrice } : obj
   );
   return newState;
 };
-console.log(updatedObject("Book", 30));
+console.log(filterObjectByName("Book", 30));
 
-const booleanState = (name, changeState) => {
-  const newState = cart.map(state =>
-    state.name === name ? {...state, inStock: changeState} : state
-    )
-    return newState
-}
-console.log(booleanState('Toaster', false))
-
-// FILTER
-// - by name
-// ???
 // - by price range (min, max)
-const minPrice =  cart.reduce((total, item)=>{
-return item.price > total.price ? total : item
-})
-console.log({minPrice: minPrice})
+const minPrice = cart.reduce((total, item) => {
+  return item.price > total.price ? total : item;
+});
+console.log({ minPrice: minPrice });
 
-const maxPrice = cart.reduce((total, item)=>{
-  return item.price < total.price ? total : item
-})
-console.log({maxPrice: maxPrice})
+const maxPrice = cart.reduce((total, item) => {
+  return item.price < total.price ? total : item;
+});
+console.log({ maxPrice: maxPrice });
