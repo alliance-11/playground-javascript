@@ -8,7 +8,6 @@ if(!num) {
   console.log("num has content")
 }
 
-
 let obj = {} // NOT empty!!!!! WARNING!
 
 if(!obj) {
@@ -17,7 +16,6 @@ if(!obj) {
 else {
   console.log("obj has no content")
 }
-
 
 let arr = [] // NOT empty!!!!! WARNING!
 
@@ -33,15 +31,12 @@ if(!arrUndefined) {
   console.log("arrUndefined has no content")
 }
 
-
 const nully = null
-
 if(!nully) {
   console.log("nully has no content")
 }
 
 const undefy = undefined // const undefy
-
 if(!undefy) {
   console.log("undefy has no content")
 }

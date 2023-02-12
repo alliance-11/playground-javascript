@@ -5,7 +5,6 @@
 // Update => map, slice
 // Delete => splice, filter 
 
-
 const coffee = {
   name: "Frappucchino",
   flavors: [], // keine flavors am Anfang

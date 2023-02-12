@@ -21,14 +21,11 @@ const updatePizza = (id, newPizzaData) => {
 
   return pizzasUpdated
 }
-
 console.log( arrPizzas )
 
 // update price of oliven pizza
 const arrPizzasUpdated = updatePizza(3, { price: 7.99 } )
 console.log( arrPizzasUpdated )
-
-
 
 // MERGING objects (mini training)
 

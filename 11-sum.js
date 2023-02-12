@@ -1,4 +1,3 @@
-
 const sum = (a,b) => {
   const summe = a + b
   return summe // wir returnen, wenn wir das ERGEBNIS weiter verarbeiten wollen

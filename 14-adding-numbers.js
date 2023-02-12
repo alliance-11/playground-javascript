@@ -2,9 +2,7 @@
 let a = 10
 //a = a + 15
 a += 15
-
 console.log( a )
-
 
 // OBJECTS
 const teacher = {

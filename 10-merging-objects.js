@@ -1,5 +1,3 @@
-
-
 const user = {
   name: "Rob",
   specialization: "Backend",

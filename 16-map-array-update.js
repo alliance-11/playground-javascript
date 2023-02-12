@@ -1,13 +1,10 @@
-
 const arrPeopleOriginal = [
   { id: 1, name: "Eliza" },
   { id: 2, name: "Gael" }, // UPDATE
   { id: 3, name: "Edward" }
 ]
-
 // RESULT
 // const gael = { id: 2, name: "Gael Freire" } // name => "Gael Freire"
-
 console.log( arrPeopleOriginal )
 
 // 1. Map LOOPT durch jedes Item im Array

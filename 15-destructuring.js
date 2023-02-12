@@ -1,13 +1,9 @@
-
 const kitchen = [ 'waschmaschine', 'kuehlschrank', 'spuele', 'moebel' ]
-
 // const waschmaschine = kitchen[0]
 // const kuehlschrank = kitchen[1]
 const [ waschmaschine, kuehlschrank ] = kitchen
-
 console.log(waschmaschine)
 console.log(kuehlschrank)
-
 
 const useState = (arr) => {
   return [

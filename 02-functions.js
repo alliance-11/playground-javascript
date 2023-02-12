@@ -18,14 +18,10 @@ const person = {
 
 printHobby( person )
 printFirstName( person )
-
-
 const product = { 
   title: "Kuehlschrank Kuehli",
   price: 399.99
 }
-
-
 const person1 = {
   anrede: "Mrs",
   name: "Jenna"

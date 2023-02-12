@@ -1,27 +1,18 @@
-
-
 const users = [
   { name: "Gael", hobby: "playing games"},
   { name: "Edward", hobby: "Not explaining, just coding" },
   { name: "Eliza", hobby: "Javascript" },
 ]
-
 // filtern wir user
-
 const filterUsers = (users, searchTerm) => {
 
   return users.filter( user => {
-
   })
-
 }
-
 
 const username = "Gael"
 const hobby = "playing games"
-
 const searchTerm = "games"
-
 if( username.includes(searchTerm) || hobby.includes(searchTerm) ) {
   console.log("Found games!")
 }
